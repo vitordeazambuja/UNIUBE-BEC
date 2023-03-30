@@ -73,15 +73,6 @@ CREATE TABLE item_pedido(
 	FOREIGN KEY (pedido_id) REFERENCES pedido(id_pedido)
 );
 
-CREATE TABLE venda(
-	id_venda int not null,
-	data_venda date not null,
-	valor_total_venda decimal(12,2) not null,
-	cliente_id int not null,
-	PRIMARY KEY (id_venda),
-	FOREIGN KEY (cliente_id) REFERENCES cliente(id_cliente)
-);
-
 CREATE TABLE funcionario(
 	id_funcionario int not null,
 	nome varchar(125) not null,
@@ -97,14 +88,32 @@ CREATE TABLE pagamento(
 	data_pagamento date not null,
 	valor_pago decimal(12,2) not null,
 	tipo_pagamento varchar(125) not null,
-	venda_id int not null,
+	cliente_id int not null,
 	funcionario_id int not null,
 	PRIMARY KEY (id_pagamento),
-	FOREIGN KEY (venda_id) REFERENCES venda(id_venda),
+	FOREIGN KEY (cliente_id) REFERENCES cliente(id_cliente),
 	FOREIGN KEY (funcionario_id) REFERENCES funcionario(id_funcionario)
 );
 
-/* TRIGGER */
+/* TRIGGERS*/
+/* TRIGGER PARA ATUALIZAR O VALOR TOTAL DO PEDIDO QUANDO FOR INSERIDO UM ELEMENTO NA TABELA item_pedido */
+CREATE TRIGGER atualizar_valor_total_pedido
+AFTER INSERT ON item_pedido ipd
+FOR EACH ROW
+BEGIN
+    UPDATE pedido p
+    SET p.valor_total = (SELECT SUM(ipd.quantidade * ipd.valor_unitario) FROM item_pedido ipd WHERE ipd.pedido_id = p.id_pedido)
+    WHERE p.id_pedido = NEW.pedido_id;
+END;
+/* TRIGGER PARA ATUALIZAR O VALOR TOTAL DA COMPRA QUANDO FOR INSERIDO UM ELEMENTO NA TABELA item_compra */
+CREATE TRIGGER atualizar_valor_total_pedido
+AFTER INSERT ON item_pedido
+FOR EACH ROW
+BEGIN
+    UPDATE pedido p
+    SET p.valor_total = (SELECT SUM(ip.quantidade * ip.valor_unitario) FROM item_pedido ip WHERE ip.pedido_id = p.id_pedido)
+    WHERE p.id_pedido = NEW.pedido_id;
+END;
 /* IF CONDICIONAL */
 /* IFF FUNÇÃO */
 /* WHILE BREAK */
