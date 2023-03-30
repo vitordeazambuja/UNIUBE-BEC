@@ -124,13 +124,20 @@ VALUES
 (4,'Luana Silva','789.123.456-00','Av. das Flores, 123, Centro, Florianópolis - SC','(48)98276-4567',2800),
 (5,'Carlos Vieira','654.321.987-00','Rua das Pedras, 789, Centro, Brasília - DF','(61)99567-2345',5000);
 
-/* POPULANDO A TABELA COM WHILE/BREAK */
-
+/* POPULANDO A TABELA COM WHILE*/
+DECLARE @contador INT = 1;
+WHILE @contador <= 20
+BEGIN
+	INSERT INTO livro
+	VALUES (@contador,'Livro '+CAST(@contador AS VARCHAR),'Autor '+CAST(@contador AS VARCHAR), FLOOR(RAND()*5)+1);
+	SET @contador += 1;
+END
 /* TESTES COM SELECT ALL */
 SELECT * FROM cliente;
 SELECT * FROM editora;
 SELECT * FROM fornecedor;
 SELECT * FROM funcionario;
+SELECT * FROM livro;
 /* TRIGGERS*/
 /* TRIGGER PARA ATUALIZAR O VALOR TOTAL DO PEDIDO QUANDO FOR INSERIDO UM ELEMENTO NA TABELA item_pedido */
 CREATE TRIGGER atualiza_valor_total_pedido
@@ -144,7 +151,17 @@ BEGIN
 END
 GO
 /* TESTES TRIGGER 1*/
-
+INSERT INTO pedido
+VALUES
+(1,'30-03-23',0,1);
+INSERT INTO item_pedido
+VALUES
+(1,2,20,1,1);
+INSERT INTO item_pedido
+VALUES
+(2,3,5,2,1);
+select * from item_pedido;
+select * from pedido;
 /* TRIGGER PARA ATUALIZAR O VALOR TOTAL DA COMPRA QUANDO FOR INSERIDO UM ELEMENTO NA TABELA item_compra */
 CREATE TRIGGER atualiza_valor_total_compra
 ON item_compra
@@ -157,7 +174,39 @@ BEGIN
 END
 GO
 /* TESTES TRIGGER 2 */
-
+INSERT INTO compra
+VALUES
+(1,'30-03-23',0,1),
+(2,'30-03-23',0,2),
+(3,'30-03-23',0,1),
+(4,'30-03-23',0,3);
+INSERT INTO item_compra
+VALUES
+(1,2,200,1,1);
+INSERT INTO item_compra
+VALUES
+(2,3,400,2,2);
+INSERT INTO item_compra
+VALUES
+(3,5,350,3,3);
+INSERT INTO item_compra
+VALUES
+(4,5,500,2,4);
+select * from item_compra;
+select * from compra;
 /* IF CONDICIONAL */
-/* IFF FUNÇÃO */
-/* CASE WHEN */
+
+/* FUNÇÃO IIF PARA BUSCAR LIVROS DE UMA DETERMINADA EDITORA*/
+SELECT id_livro,titulo,autor, IIF(editora_id = 5, 'livro da Casa das Letras','livro de outra editora')
+FROM livro
+/* DEMONSTRAÇÃO DE CASE/WHEN */
+SELECT c.id_compra,
+	   c.data_compra,
+	   CASE
+		WHEN valor_total_compra < 1000 THEN 'Compra pequena'
+		WHEN valor_total_compra < 1500  THEN 'Compra média'
+		WHEN valor_total_compra < 2000 THEN 'Compra grande'
+	   ELSE
+		'Compra gigante'
+	   END AS class_compra
+FROM compra c
