@@ -195,34 +195,25 @@ VALUES
 select * from item_compra;
 select * from compra;
 /* IF CONDICIONAL */
-DECLARE @classificacao varchar(20),
-		@pagamentoID int;
-		SELECT @pagamentoID = id_pagamento
-		FROM pagamento;
-		IF COUNT(@pagamentoID) >= 10
-			BEGIN
-				SET @classificacao = 'Vendas Altas'
-			END
-		ELSE IF COUNT(@pagamentoID) >= 5
-			BEGIN
-				SET @classificacao = 'Vendas Médias'
-			END
-		ELSE
+DECLARE @contagemPag int
+	SELECT @contagemPag = COUNT(id_pagamento)
+	FROM pagamento;
+	IF @contagemPag < 25
 		BEGIN
-			SET @classificacao = 'Vendas Baixas'
+			PRINT 'Vendas Baixas'
 		END
-SELECT funcionario.nome, 
-	   COUNT(pagamento.id_pagamento) AS total_pagamentos,
-	   @classificacao as classificacao
-FROM funcionario
-INNER JOIN pagamento ON funcionario.id_funcionario = pagamento.funcionario_id
-GROUP BY funcionario.id_funcionario, funcionario.nome
-ORDER BY total_pagamentos DESC;
-
+	ELSE
+		BEGIN
+			PRINT 'Vendas Satisfatórias'
+		END;
 /* TESTE IF CONDICIONAL */
-INSERT INTO pagamento
-VALUES
-(1, '30-03-23', 55,'dinheiro',1,1);
+DECLARE @contador INT = 1;
+WHILE @contador <= 30
+BEGIN
+	INSERT INTO pagamento
+	VALUES (@contador,'01-04-2023',200,'dinheiro',1,1);
+	SET @contador += 1;
+END
 /* FUNÇÃO IIF PARA BUSCAR LIVROS DE UMA DETERMINADA EDITORA*/
 SELECT id_livro,titulo,autor, IIF(editora_id = 5, 'livro da Casa das Letras','livro de outra editora')
 FROM livro
