@@ -120,9 +120,19 @@ Para representar através de uma única tabela, é preciso uma coluna para fazer
 ![](./Imagens%20Caderno/tabela2.png)
 
 ![]()INSERIR IMAGEM TABELA
+
 Esta representação não está completamente normalizada.
 
 ## Tabela por Subclasse
 Na representação "Tabela por subclasse" existe a superclasse e todas as suas filhas geradas fisicamente no banco de dados, sendo que em todas as classes filhas teremos uma chave estrangeira que apontará para a clase pai.
+
 ![]()INSERIR IMAGEM RELAÇÃO DE TABELAS
 
+Apesar de normalizado, a pesquisa no banco de dados sempre deve requerer o "JOIN" entre os registros das tabelas para realizar a busca completa, do nome com o CPF.
+
+## Tabela por Classe Concreta
+Nesta representação são geradas apenas as classes concretas na base de dados. De acordo com o mesmo exemplo, apenas a pessoa jurídica e a pessoa física são criadas fisicamente no banco de dados.
+
+![]()INSERIR IMAGEM TABELAS
+
+Apesar de normalizado, a pesquisa no banco de dados sempre deve requerer a união entre os registros das tabelas para realizar a busca completa de todas as pessoas no banco de dados.
