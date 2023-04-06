@@ -118,3 +118,11 @@ Mesmo que existam as classes e superclasses distintas na orientação de objetos
 Para representar através de uma única tabela, é preciso uma coluna para fazer a discriminação da pessoa física e pessoa jurídica.
 
 ![](./Imagens%20Caderno/tabela2.png)
+
+![]()INSERIR IMAGEM TABELA
+Esta representação não está completamente normalizada.
+
+## Tabela por Subclasse
+Na representação "Tabela por subclasse" existe a superclasse e todas as suas filhas geradas fisicamente no banco de dados, sendo que em todas as classes filhas teremos uma chave estrangeira que apontará para a clase pai.
+![]()INSERIR IMAGEM RELAÇÃO DE TABELAS
+
