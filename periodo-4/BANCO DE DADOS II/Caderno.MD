@@ -136,3 +136,69 @@ Nesta representação são geradas apenas as classes concretas na base de dados.
 ![](./Imagens%20Caderno/tabela5.png)
 
 Apesar de normalizado, a pesquisa no banco de dados sempre deve requerer a união entre os registros das tabelas para realizar a busca completa de todas as pessoas no banco de dados.
+
+---
+
+# Mineração de Dados
+
+## Motivação
+
+Crescimento rápido do tamanho e do número de bancos de dados disponíveis em:
+
+- Aplicações comerciais;
+- Indústria;
+- Internet, etc.
+
+Muitos dados X Pouca informação.
+
+A mineração de dados surge como uma ferramenta poderosa para suprir a necessidade de descobrir informações úteis, tais como padrões escondidos em grandes bancos de dados.
+
+---
+
+## Conceito
+
+Corresponde em aplicar a uma base de dados adequadamente preparada, algoritmos e técnicas para descoberta de padrões interessantes nesses dados.
+
+É apenas uma etapa de um processo maior, conhecido como processo de descoberta de conhecimentos em bancos de dados
+
+- KDD = Knowledge Discovery in Databases
+
+---
+
+![]() INSERIR IMAGEM ETAPAS PROCESSO KDD
+
+---
+
+## Tarefas de Mineração de Dados
+
+- Mineração de Regras de Associação
+- Mineração de Padrões Sequenciais
+- Classificação
+- Agrupamento
+- Detecção de Anomalias (Outliers)
+
+---
+
+## Mineração de Regras de Associação
+
+Problemas de minerar regras de associação:
+- Dado um conjunto de registros, cada um contendo um número qualquer de itens.
+
+- Encontrar regras de dependência que podem ser usadas para predizer a ocorrência de um item baseada na ocorrência de outros.
+
+![]() INSERIR TABELA TRANSAÇÕES
+
+Algumas regras que poderiam ser Descobertas pelo software de mineração
+
+{Pão} -> {Leite}
+{Fralda, Leite} -> {Cerveja}
+
+Uma regra é considerada interessante quando a mesma possui _suporte_ e _confiança_ superiores aos _valores mínimos_ fornecidos pelo usuário.
+
+- Suporte de um item (ou conjunto de itens): números de transações em que o item aparece.
+
+- Suporte de uma regra A -> B: número de transações em que aparecem os itens A U B.
+
+- Confiança de uma regra A -> B: sup(A U B) / sup(A)
+
+**Exemplo**: se o banco de dados abaixo fosse passado para o software de mineração e o usuário indicasse um suporte mínimo = 3 e confiança = 70%, pelo menos a regra {pão} -> {leite} seria descoberta pelo software de mineração.
