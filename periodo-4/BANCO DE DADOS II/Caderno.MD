@@ -165,7 +165,7 @@ Corresponde em aplicar a uma base de dados adequadamente preparada, algoritmos e
 
 ---
 
-![]() INSERIR IMAGEM ETAPAS PROCESSO KDD
+![](./Imagens%20Caderno/tabela6.png)
 
 ---
 
@@ -186,7 +186,7 @@ Problemas de minerar regras de associação:
 
 - Encontrar regras de dependência que podem ser usadas para predizer a ocorrência de um item baseada na ocorrência de outros.
 
-![]() INSERIR TABELA TRANSAÇÕES
+![](./Imagens%20Caderno/tabela7.png)
 
 Algumas regras que poderiam ser Descobertas pelo software de mineração
 
@@ -202,3 +202,49 @@ Uma regra é considerada interessante quando a mesma possui _suporte_ e _confian
 - Confiança de uma regra A -> B: sup(A U B) / sup(A)
 
 **Exemplo**: se o banco de dados abaixo fosse passado para o software de mineração e o usuário indicasse um suporte mínimo = 3 e confiança = 70%, pelo menos a regra {pão} -> {leite} seria descoberta pelo software de mineração.
+
+![](./Imagens%20Caderno/tabela8.png)
+
+## Marketing e Promoção de Vendas
+
+- Considere que a seguinte regra tenha sido descoberta:
+
+{Refrigerante, ...} -> {Batata Frita}
+
+- **Batata Frita como conseqüente:** pode ajudar a determinar o que pode ser feito para aumentar as vendas de batata frita.
+
+- **Refrigerante como antecedente:** pode ser usado para identificar quais produtos seriam afetados caso a loja deixasse de vender refrigerante.
+
+Como aprimorar o negócio a partir da regra descoberta {pão} → {leite} ?
+
+- **Estratégia 1:** colocar leite e pão próximos para encorajar a compra conjunta desses produtos quando o cliente visitar a loja.
+
+- **Estratégia 2:** colocar leite e pão em lados opostos da loja pode levar o consumidor de tais produtos a comprar também outros itens no caminho.
+
+- **Estratégia 3:** fazer uma promoção dos itens para venda conjunta.
+
+Tem como objetivo identificar sequências de eventos 
+(ou objetos) que ocorrem frequentemente em bancos 
+de dados temporais.
+
+- Descobrir a evolução de sintomas apresentados em pacientes.
+
+- Descobrir a evolução das compras realizadas por clientes.
+
+- Descobrir caminhos (sequências de páginas acessadas) na Web frequentemente percorridos pelos usuários
+
+## Mineração de Padrões Sequenciais
+
+![](./Imagens%20Caderno/tabela9.png)
+
+O Padrão seqüencial acima seria descoberto se o usuário informasse o banco de dados à esquerda e por exemplo um **suporte mínimo de 50%**.
+
+Assim, o mecanismo de mineração deve **encontrar todos os padrões seqüenciais**, de todos os tamanhos possíveis, que apareçam **em mais de 50% das seqüências de transações**.
+
+## Padrões Sequenciais - Aplicações
+
+### Marketing Direcionado
+
+- Descobrindo um padrão seqüencial, como < {TV} , {DVD} > a empresa pode lançar uma **propaganda do produto DVD direcionada** àqueles **clientes que já compraram o produto TV**, sabendo que haverá **maior probabilidade de efetividade**.
+
+- O padrão < {TV} , {DVD} > é um exemplo comum, mas o mecanismo de mineração pode encontrar muitos padrões importantes, não óbvios como este citado.
