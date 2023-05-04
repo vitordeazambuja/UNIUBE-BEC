@@ -9,9 +9,9 @@ PRIMARY KEY (id_editora)
 
 CREATE TABLE livro(
 id_livro int not null,
+editora_id int not null,
 titulo varchar(125) not null,
 autor varchar(125) not null,
-editora_id int not null,
 PRIMARY KEY (id_livro),
 FOREIGN KEY (editora_id) REFERENCES editora(id_editora)
 );
@@ -27,19 +27,19 @@ CREATE TABLE fornecedor(
 
 CREATE TABLE compra(
 	id_compra int not null,
+	fornecedor_id int not null,
 	data_compra date not null,
 	valor_total_compra decimal(12,2) not null,
-	fornecedor_id int not null,
 	PRIMARY KEY (id_compra),
 	FOREIGN KEY (fornecedor_id) REFERENCES fornecedor(id_fornecedor)
 );
 
 CREATE TABLE item_compra(
 	id_item_compra int not null,
-	quantidade int not null,
-	valor_unitario decimal(12,2) not null,
 	livro_id int not null,
 	compra_id int not null,
+	quantidade int not null,
+	valor_unitario decimal(12,2) not null,
 	PRIMARY KEY (id_item_compra),
 	FOREIGN KEY (livro_id) REFERENCES livro(id_livro),
 	FOREIGN KEY (compra_id) REFERENCES compra(id_compra)
@@ -55,19 +55,19 @@ CREATE TABLE cliente(
 
 CREATE TABLE pedido(
 	id_pedido int not null,
+	cliente_id int not null,
 	data_pedido date not null,
 	valor_total decimal(12,2) not null,
-	cliente_id int not null,
 	PRIMARY KEY (id_pedido),
 	FOREIGN KEY (cliente_id) REFERENCES cliente(id_cliente)
 );
 
 CREATE TABLE item_pedido(
 	id_item_pedido int not null,
-	quantidade int not null,
-	valor_unitario decimal(12,2) not null,
 	livro_id int not null,
 	pedido_id int not null,
+	quantidade int not null,
+	valor_unitario decimal(12,2) not null,
 	PRIMARY KEY (id_item_pedido),
 	FOREIGN KEY (livro_id) REFERENCES livro(id_livro),
 	FOREIGN KEY (pedido_id) REFERENCES pedido(id_pedido)
@@ -85,11 +85,11 @@ CREATE TABLE funcionario(
 
 CREATE TABLE pagamento(
 	id_pagamento int not null,
+	cliente_id int not null,
+	funcionario_id int not null,
 	data_pagamento date not null,
 	valor_pago decimal(12,2) not null,
 	tipo_pagamento varchar(125) not null,
-	cliente_id int not null,
-	funcionario_id int not null,
 	PRIMARY KEY (id_pagamento),
 	FOREIGN KEY (cliente_id) REFERENCES cliente(id_cliente),
 	FOREIGN KEY (funcionario_id) REFERENCES funcionario(id_funcionario)
