@@ -3,8 +3,14 @@ CREATE TABLE editora(
 id_editora int not null,
 nome varchar(125) not null,
 endereco varchar(125),
-telefone varchar(15),
 PRIMARY KEY (id_editora)
+);
+
+CREATE TABLE editora_telefone(
+id_editora int,
+telefone varchar(15),
+PRIMARY KEY(id_editora, telefone),
+FOREIGN KEY(id_editora)REFERENCES editora(id_editora)
 );
 
 CREATE TABLE livro(
@@ -20,9 +26,14 @@ CREATE TABLE fornecedor(
 	id_fornecedor int not null,
 	nome varchar(125) not null,
 	endereco varchar(125),
-	telefone varchar(15),
 	email varchar(125),
 	PRIMARY KEY (id_fornecedor)
+);
+CREATE TABLE fornecedor_telefone(
+id_fornecedor int,
+telefone varchar(15),
+PRIMARY KEY(id_fornecedor, telefone),
+FOREIGN KEY(id_fornecedor)REFERENCES fornecedor(id_fornecedor)
 );
 
 CREATE TABLE compra(
@@ -49,8 +60,13 @@ CREATE TABLE cliente(
 	id_cliente int not null,
 	nome varchar(125) not null,
 	endereco varchar(125),
-	telefone varchar(15),
 	PRIMARY KEY (id_cliente)
+);
+CREATE TABLE cliente_telefone(
+id_cliente int,
+telefone varchar(15),
+PRIMARY KEY(id_cliente, telefone),
+FOREIGN KEY(id_cliente)REFERENCES cliente(id_cliente)
 );
 
 CREATE TABLE pedido(
@@ -78,9 +94,14 @@ CREATE TABLE funcionario(
 	nome varchar(125) not null,
 	cpf varchar(125) not null,
 	endereco varchar(125),
-	telefone varchar(15),
 	salario decimal(12,2) not null,
 	PRIMARY KEY (id_funcionario)
+);
+CREATE TABLE funcionario_telefone(
+id_funcionario int,
+telefone varchar(15),
+PRIMARY KEY(id_funcionario, telefone),
+FOREIGN KEY(id_funcionario)REFERENCES funcionario(id_funcionario)
 );
 
 CREATE TABLE pagamento(
