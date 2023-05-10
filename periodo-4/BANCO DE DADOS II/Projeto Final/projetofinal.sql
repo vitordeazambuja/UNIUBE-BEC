@@ -264,3 +264,69 @@ BEGIN TRANSACTION
 		PRINT 'Erro ao inserir pagamento, chave duplicada'
 END
 select * from pagamento;
+/* PROCEDURE CLIENTE*/
+GO
+CREATE PROCEDURE insere_telefone_cliente
+   @id_cliente int,
+   @telefone varchar(15)
+AS
+BEGIN
+   INSERT INTO cliente_telefone (id_cliente, telefone)
+   VALUES (@id_cliente, @telefone)
+END
+GO
+SELECT * FROM cliente_telefone;
+EXECUTE insere_telefone_cliente 1, '996314678';
+EXECUTE insere_telefone_cliente 1, '98003245';
+EXECUTE insere_telefone_cliente 1, '997980908';
+SELECT * FROM cliente_telefone;
+
+/* PROCEDURE EDITORA */
+GO
+CREATE PROCEDURE insere_telefone_editora
+   @id_editora int,
+   @telefone varchar(15)
+AS
+BEGIN
+   INSERT INTO editora_telefone (id_editora, telefone)
+   VALUES (@id_editora, @telefone)
+END
+GO
+SELECT * FROM cliente_telefone;
+EXECUTE insere_telefone_editora 1, '32498764';
+EXECUTE insere_telefone_editora 1,'33097633';
+EXECUTE insere_telefone_editora 1,'32778906';
+SELECT * FROM editora_telefone;
+/* PROCEDURE FUNCINARIO */
+GO
+CREATE PROCEDURE insere_telefone_funcionario
+   @id_funcionario int,
+   @telefone varchar(15)
+AS
+BEGIN
+   INSERT INTO funcionario_telefone (id_funcionario, telefone)
+   VALUES (@id_funcionario, @telefone)
+END
+GO
+SELECT * FROM funcionario_telefone;
+EXECUTE insere_telefone_funcionario 1, '980076563';
+EXECUTE insere_telefone_funcionario 1,'992234679';
+EXECUTE insere_telefone_funcionario 1,'990769897';
+SELECT * FROM funcionario_telefone;
+
+/* PROCEDURE FORNECEDOR */
+GO
+CREATE PROCEDURE insere_telefone_fornecedor
+   @id_fornecedor int,
+   @telefone varchar(15)
+AS
+BEGIN
+   INSERT INTO fornecedor_telefone (id_fornecedor, telefone)
+   VALUES (@id_fornecedor, @telefone)
+END
+GO
+SELECT * FROM fornecedor_telefone;
+EXECUTE insere_telefone_fornecedor 1, '32234579';
+EXECUTE insere_telefone_fornecedor 1,'32678800';
+EXECUTE insere_telefone_fornecedor 1,'32972255';
+SELECT * FROM fornecedor_telefone;
