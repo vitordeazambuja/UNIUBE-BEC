@@ -118,39 +118,39 @@ CREATE TABLE pagamento(
 /* POPULANDO AS TABELAS */
 INSERT INTO cliente
 VALUES 
-(1, 'João Silva', 'Rua das Flores, 123, Centro, São Paulo - SP','(11)98765-4321'),
-(2,'Maria Santos', 'Avenida das Palmeiras, 456, Jardim Botânico, Rio de Janeiro - RJ', '(21)91234-5678'),
-(3,'Pedro Oliveira', 'Rua dos Ipês, 789, Jardim América, Belo Horizonte - MG', '(31)99876-5432'),
-(4,'Ana Rodrigues', 'Praça da Liberdade, 101, Savassi, Belo Horizonte - MG', '(31)98765-4321'),
-(5,'Lucas Costa', 'Rua da Paz, 234, Vila Mariana, São Paulo - SP', '(11)91234-5678');
+(1, 'João Silva', 'Rua das Flores, 123, Centro, São Paulo - SP'),
+(2,'Maria Santos', 'Avenida das Palmeiras, 456, Jardim Botânico, Rio de Janeiro - RJ'),
+(3,'Pedro Oliveira', 'Rua dos Ipês, 789, Jardim América, Belo Horizonte - MG'),
+(4,'Ana Rodrigues', 'Praça da Liberdade, 101, Savassi, Belo Horizonte - MG'),
+(5,'Lucas Costa', 'Rua da Paz, 234, Vila Mariana, São Paulo - SP');
 INSERT INTO editora
 VALUES
-(1,'Livros & Cia','Rua dos Livreiros, 123, Centro, São Paulo - SP','(11)9876-5432'),
-(2,'Edições Literárias','Avenida dos Escritores, 456, Jardim Botânico, Rio de Janeiro - RJ','(21)9123-4567'),
-(3,'Editora Criativa','Rua dos Artistas, 789, Vila Mariana, São Paulo - SP','(11)9987-6543'),
-(4,'Livraria do Saber','Praça da Cultura, 101, Savassi, Belo Horizonte - MG','(31)9876-5432'),
-(5,'Casa das Letras','Avenida das Letras, 234, Jardim América, Belo Horizonte - MG','(31)9123-4567');
+(1,'Livros & Cia','Rua dos Livreiros, 123, Centro, São Paulo - SP'),
+(2,'Edições Literárias','Avenida dos Escritores, 456, Jardim Botânico, Rio de Janeiro - RJ'),
+(3,'Editora Criativa','Rua dos Artistas, 789, Vila Mariana, São Paulo - SP'),
+(4,'Livraria do Saber','Praça da Cultura, 101, Savassi, Belo Horizonte - MG'),
+(5,'Casa das Letras','Avenida das Letras, 234, Jardim América, Belo Horizonte - MG');
 INSERT INTO fornecedor
 VALUES
-(1,'Livraria das Letras','Rua do Saber, 456, Centro, Rio de Janeiro - RJ','(21)5555-4444','contato@livrariadasletras.com.br'),
-(2,'Leitura Perfeita','Av. das Palavras, 456, Jardins, Rio de Janeiro - RJ','(21)5555-5555','atendimento@leituraperfeita.com'),
-(3,'Biblioteca da Alma','Rua dos Sonhos, 789, Vila Madalena, Belo Horizonte - MG','(31)5555-5555','contato@bibliotecadaalma.com.br'),
-(4,'Livros e Ideias','Praça das Ideias, 101, Centro, Brasília - DF','(61)5555-5555','atendimento@livroseideias.com'),
-(5,'Sabedoria Cultural','Avenida do Conhecimento, 987, Brooklin, São Paulo - SP','(11)5555-5555','contato@sabedoriacultural.com.br');
+(1,'Livraria das Letras','Rua do Saber, 456, Centro, Rio de Janeiro - RJ','contato@livrariadasletras.com.br'),
+(2,'Leitura Perfeita','Av. das Palavras, 456, Jardins, Rio de Janeiro - RJ','atendimento@leituraperfeita.com'),
+(3,'Biblioteca da Alma','Rua dos Sonhos, 789, Vila Madalena, Belo Horizonte - MG','contato@bibliotecadaalma.com.br'),
+(4,'Livros e Ideias','Praça das Ideias, 101, Centro, Brasília - DF','atendimento@livroseideias.com'),
+(5,'Sabedoria Cultural','Avenida do Conhecimento, 987, Brooklin, São Paulo - SP','contato@sabedoriacultural.com.br');
 INSERT INTO funcionario
 VALUES
-(1,'Fernanda Oliveira','123.456.789-00','Rua das Flores, 123, Centro, São Paulo - SP','(11)93422-6897',3000),
-(2,'Rafael Santos','987.654.321-00','Rua das Pedras, 456, Jardins, Rio de Janeiro - RJ','(21)99765-1234',4500),
-(3,'Pedro Almeida','456.789.123-00','Rua das Árvores, 789, Vila Madalena, Belo Horizonte - MG','(31)98234-5678',3200),
-(4,'Luana Silva','789.123.456-00','Av. das Flores, 123, Centro, Florianópolis - SC','(48)98276-4567',2800),
-(5,'Carlos Vieira','654.321.987-00','Rua das Pedras, 789, Centro, Brasília - DF','(61)99567-2345',5000);
+(1,'Fernanda Oliveira','123.456.789-00','Rua das Flores, 123, Centro, São Paulo - SP',3000),
+(2,'Rafael Santos','987.654.321-00','Rua das Pedras, 456, Jardins, Rio de Janeiro - RJ',4500),
+(3,'Pedro Almeida','456.789.123-00','Rua das Árvores, 789, Vila Madalena, Belo Horizonte - MG',3200),
+(4,'Luana Silva','789.123.456-00','Av. das Flores, 123, Centro, Florianópolis - SC',2800),
+(5,'Carlos Vieira','654.321.987-00','Rua das Pedras, 789, Centro, Brasília - DF',5000);
 
 /* POPULANDO A TABELA COM WHILE*/
 DECLARE @contador INT = 1;
 WHILE @contador <= 20
 BEGIN
 	INSERT INTO livro
-	VALUES (@contador,'Livro '+CAST(@contador AS VARCHAR),'Autor '+CAST(@contador AS VARCHAR), FLOOR(RAND()*5)+1);
+	VALUES (@contador, FLOOR(RAND()*5)+1,'Livro '+CAST(@contador AS VARCHAR),'Autor '+CAST(@contador AS VARCHAR));
 	SET @contador += 1;
 END
 /* TESTES COM SELECT ALL */
@@ -161,6 +161,7 @@ SELECT * FROM funcionario;
 SELECT * FROM livro;
 /* TRIGGERS*/
 /* TRIGGER PARA ATUALIZAR O VALOR TOTAL DO PEDIDO QUANDO FOR INSERIDO UM ELEMENTO NA TABELA item_pedido */
+GO
 CREATE TRIGGER atualiza_valor_total_pedido
 ON item_pedido
 AFTER INSERT
@@ -174,16 +175,17 @@ GO
 /* TESTES TRIGGER 1*/
 INSERT INTO pedido
 VALUES
-(1,'30-03-23',0,1);
+(1,1,'30-03-23',0);
 INSERT INTO item_pedido
 VALUES
-(1,2,20,1,1);
+(1,2,1,1,20);
 INSERT INTO item_pedido
 VALUES
-(2,3,5,2,1);
+(2,3,1,2,40);
 select * from item_pedido;
 select * from pedido;
 /* TRIGGER PARA ATUALIZAR O VALOR TOTAL DA COMPRA QUANDO FOR INSERIDO UM ELEMENTO NA TABELA item_compra */
+GO
 CREATE TRIGGER atualiza_valor_total_compra
 ON item_compra
 AFTER INSERT
@@ -197,22 +199,22 @@ GO
 /* TESTES TRIGGER 2 */
 INSERT INTO compra
 VALUES
-(1,'30-03-23',0,1),
-(2,'30-03-23',0,2),
-(3,'30-03-23',0,1),
-(4,'30-03-23',0,3);
+(1,1,'30-03-23',0),
+(2,2,'30-03-23',0),
+(3,1,'30-03-23',0),
+(4,3,'30-03-23',0);
 INSERT INTO item_compra
 VALUES
-(1,2,200,1,1);
+(1,1,1,1,200);
 INSERT INTO item_compra
 VALUES
-(2,3,400,2,2);
+(2,2,2,2,400);
 INSERT INTO item_compra
 VALUES
-(3,5,350,3,3);
+(3,3,3,3,350);
 INSERT INTO item_compra
 VALUES
-(4,5,500,2,4);
+(4,4,4,2,500);
 select * from item_compra;
 select * from compra;
 /* IF CONDICIONAL */
@@ -232,7 +234,7 @@ DECLARE @contador INT = 1;
 WHILE @contador <= 30
 BEGIN
 	INSERT INTO pagamento
-	VALUES (@contador,'01-04-2023',200,'dinheiro',1,1);
+	VALUES (@contador,1,1,'01-04-2023',200,'dinheiro');
 	SET @contador += 1;
 END
 /* FUNÇÃO IIF PARA BUSCAR LIVROS DE UMA DETERMINADA EDITORA*/
@@ -249,3 +251,16 @@ SELECT c.id_compra,
 		'Compra gigante'
 	   END AS class_compra
 FROM compra c
+/* TRANSAÇÃO - COMMIT/ROLLBACK */
+select * from pagamento;
+BEGIN TRANSACTION
+	insert into pagamento
+	values (1,1,1,'02-05-2023',100,'cartao');
+	BEGIN
+	IF @@ERROR = 0
+		COMMIT
+	ELSE
+		ROLLBACK
+		PRINT 'Erro ao inserir pagamento, chave duplicada'
+END
+select * from pagamento;
