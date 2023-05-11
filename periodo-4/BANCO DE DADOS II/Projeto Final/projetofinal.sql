@@ -260,8 +260,10 @@ BEGIN TRANSACTION
 	IF @@ERROR = 0
 		COMMIT
 	ELSE
+	BEGIN
 		ROLLBACK
 		PRINT 'Erro ao inserir pagamento, chave duplicada'
+	END
 END
 select * from pagamento;
 /* PROCEDURE CLIENTE*/
@@ -292,7 +294,7 @@ BEGIN
    VALUES (@id_editora, @telefone)
 END
 GO
-SELECT * FROM cliente_telefone;
+SELECT * FROM editora_telefone;
 EXECUTE insere_telefone_editora 1, '32498764';
 EXECUTE insere_telefone_editora 1,'33097633';
 EXECUTE insere_telefone_editora 1,'32778906';
@@ -330,3 +332,26 @@ EXECUTE insere_telefone_fornecedor 1, '32234579';
 EXECUTE insere_telefone_fornecedor 1,'32678800';
 EXECUTE insere_telefone_fornecedor 1,'32972255';
 SELECT * FROM fornecedor_telefone;
+
+/* FUNÇÃO DE CRIAÇÃO E USO */
+-- A função irá receber como parâmetro o id do livro e irá retornar a quantidade de livros disponíveis
+GO
+CREATE FUNCTION qtde_livros_disponiveis(@id_livro INT)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @quantidade_livros INT
+
+    SELECT @quantidade_livros = SUM(quantidade)
+    FROM item_compra
+    WHERE livro_id = @id_livro
+
+    RETURN @quantidade_livros
+END
+GO
+
+INSERT INTO item_compra
+VALUES(5, 1, 1, 2, 200);
+
+SELECT dbo.qtde_livros_disponiveis(1) AS 'Quantidade de livros disponíveis'
+SELECT * FROM item_compra
