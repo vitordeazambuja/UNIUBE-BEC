@@ -23,30 +23,126 @@ RETURN @numero_prefix
 END
 GO
 SELECT dbo.insere_prefixo(1) AS 'Número com prefixo';
-/*
+
 
 -- Ex 10
+GO
 create function ajuste_precos (@valor decimal(10,2))
 returns decimal(10,2)
 begin
 	return abs(@valor * 1.05)
 end
+GO
 
-select dbo.ajuste_precos(-100)
+select dbo.ajuste_precos(-100) as 'Ajuste';
 
 -- Ex 11
-create view VI_RANDOMVALOR
+GO
+create view [VI_RANDOMVALOR]
 as
-select * from cliente
-select rand() * 1000
-
-create function ajuste_precos (@valor decimal(10,2))
+select titulo,round(rand()*1000,2) AS preco_random from produto
+GO
+GO
+create function preco_random (@valor decimal(10,2))
 returns decimal(10,2)
 begin
-	return rand() * 1000
+	return rand() * 1000
 end
+GO
+select * from [VI_RANDOMVALOR]
+-- Ex 12
+GO
+CREATE FUNCTION dbo.ArredondarPreco(@preco decimal(6,2))
+RETURNS decimal(6,2)
+AS
+BEGIN
+    DECLARE @precoArredondado decimal(6,2);
+    
+    SET @precoArredondado = ROUND(@preco, 0, 1) - 1 + 0.99;
+    
+    RETURN @precoArredondado;
+END;
+GO
 
-*/
+-- Ex 13
+GO
+CREATE FUNCTION concat_funcao(@id_cliente int, @id_produto int)
+RETURNS VARCHAR(125)
+BEGIN
+	DECLARE @nome_cliente VARCHAR(125);
+	DECLARE @titulo_produto VARCHAR(125);
+	SET @nome_cliente = (SELECT nome FROM cliente WHERE id = @id_cliente);
+	SET @titulo_produto = (SELECT titulo FROM produto WHERE id = @id_produto);
+	RETURN CONCAT(@nome_cliente, ' - ', @titulo_produto);
+END
+GO
+SELECT id, titulo, dbo.ArredondarPreco(preco) AS preco_arredondado
+FROM produto;
+
+
+SELECT dbo.concat_funcao(2,1) AS 'concat_funcao';
+
+-- Ex 14
+SELECT FORMAT(CURRENT_TIMESTAMP, 'yyyy-MM-dd hh:mm:ss tt') AS data_corrente;
+
+-- Ex 15
+GO
+CREATE FUNCTION verificar_tabela (@nomeTabela VARCHAR(128))
+RETURNS VARCHAR(10)
+AS
+BEGIN
+	DECLARE @existe VARCHAR(10);
+	IF EXISTS (
+		SELECT 1
+		FROM INFORMATION_SCHEMA.TABLES
+		WHERE TABLE_NAME = @nomeTabela
+	)
+	BEGIN
+		SET @existe = ('Existe');
+	END
+	ELSE
+	BEGIN
+		SET	@existe = ('Não Existe');
+	END
+	RETURN @existe;
+END;
+GO
+SELECT dbo.verificar_tabela('cliente') AS 'verificar';
+SELECT dbo.verificar_tabela('teste') AS 'verificar';
+
+-- Ex 16 a
+SELECT * FROM produto
+SELECT * FROM pedido
+SELECT * FROM item_pedido
+
+GO
+CREATE PROCEDURE busca_produto_cliente(@id_cliente int)
+AS
+BEGIN
+    SELECT p.titulo
+    FROM produto p
+    INNER JOIN item_pedido itp ON itp.id_produto = p.id
+    INNER JOIN pedido pe ON pe.id = itp.id_pedido
+    INNER JOIN cliente c ON c.id = pe.id_cliente AND c.id = @id_cliente;
+END
+GO
+
+EXECUTE dbo.busca_produto_cliente @id_cliente = 1;
+
+-- Ex 16 b
+GO
+CREATE PROCEDURE busca_produtos_nao_vendidos(@id_produto INT, @preco_minimo DECIMAL(10, 2))
+AS
+BEGIN
+    SELECT *
+    FROM produto p
+    WHERE p.id IN (SELECT id_produto FROM item_pedido)
+    AND (@id_produto IS NOT NULL AND p.id = @id_produto)
+    AND (@preco_minimo IS NOT NULL AND p.preco >= @preco_minimo);
+END
+GO
+
+EXECUTE busca_produtos_nao_vendidos @id_produto = 2, @preco_minimo = 500;
 
 --DATABASE ECOMMERCE
 
