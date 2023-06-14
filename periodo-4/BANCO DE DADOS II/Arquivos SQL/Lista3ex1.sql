@@ -118,9 +118,11 @@ VALUES (
 SELECT * FROM PRD_SUBCATEGORIA;
 
 /* EX1 */
-CREATE PROCEDURE ExcluirSubcategoriasSemProdutos()
+GO
+CREATE PROCEDURE excluirsubcat
+AS
 BEGIN
-    DECLARE subcategoria_id INT;
+    DECLARE @subcategoria_id INT;
     DECLARE cursor_subcategorias CURSOR FOR
     SELECT sub.ID_SUBCATEGORIA
     FROM PRD_SUBCATEGORIA sub
@@ -129,16 +131,18 @@ BEGIN
     DECLARE @tem_produtos INT;
     DECLARE @produto_count INT;
     OPEN cursor_subcategorias;
-    FETCH NEXT FROM cursor_subcategorias INTO subcategoria_id;
+    FETCH NEXT FROM cursor_subcategorias INTO @subcategoria_id;
     WHILE @@FETCH_STATUS = 0
     BEGIN
-        SELECT @produto_count = COUNT(*) FROM PRD_PRODUTO WHERE ID_SUBCATEGORIA = subcategoria_id;
+        SELECT @produto_count = COUNT(*) FROM PRD_PRODUTO WHERE ID_SUBCATEGORIA = @subcategoria_id;
         IF @produto_count = 0
         BEGIN
-            DELETE FROM PRD_SUBCATEGORIA WHERE ID_SUBCATEGORIA = subcategoria_id;
+            DELETE FROM PRD_SUBCATEGORIA WHERE ID_SUBCATEGORIA = @subcategoria_id;
         END;
-        FETCH NEXT FROM cursor_subcategorias INTO subcategoria_id;
+        FETCH NEXT FROM cursor_subcategorias INTO @subcategoria_id;
     END;
     CLOSE cursor_subcategorias;
     DEALLOCATE cursor_subcategorias;
 END;
+GO
+
