@@ -36,6 +36,7 @@ CREATE TABLE colhido(
 );
 
 -- INSERTS NAS TABELAS
+select * from canteiro;
 INSERT INTO canteiro VALUES
     (1, 'Canteiro 1', 4.5, 3.2),
     (2, 'Canteiro 2', 3.8, 2.9),
@@ -48,6 +49,7 @@ INSERT INTO canteiro VALUES
     (9, 'Canteiro 9', 4.9, 4.1),
     (10, 'Canteiro 10', 3.6, 2.8);
 
+select * from funcionario;
 INSERT INTO funcionario VALUES
     (1, 'Funcionário 1', 28),
     (2, 'Funcionário 2', 35),
@@ -98,7 +100,7 @@ INSERT INTO colhido VALUES
 
 -- EX LETRA C
 SELECT * FROM plantio
-WHERE data > '2017-01-01';
+WHERE year(data) > 2017;
 
 -- EX LETRA D
 SELECT * FROM funcionario
@@ -119,10 +121,21 @@ EXECUTE colhidofunc 1;
 -- EX LETRA F
 GO
 CREATE VIEW divcanteiro AS
-SELECT c.canteiroId, nome, COUNT(DISTINCT plantaId) AS qtd_plantas
+SELECT c.nome AS 'Canteiros Diversificados'
 FROM canteiro c
-INNER JOIN plantio p
-ON p.canteiroId = c.canteiroId
-GROUP BY c.canteiroId, c.nome
-HAVING COUNT(DISTINCT p.plantaId)>1;
+INNER JOIN plantio p ON c.canteiroId = p.canteiroId
+GROUP BY c.nome
+HAVING COUNT(DISTINCT p.plantaId) > 1;
 GO
+
+INSERT INTO plantio
+VALUES
+(11,1,1,1,'2023-05-24',170),
+(12,1,1,1,'2023-05-24',170),
+(13,1,1,1,'2023-05-24',170),
+(14,2,1,4,'2023-05-24',170),
+(15,2,1,4,'2023-05-24',170);
+
+SELECT * FROM plantio
+
+SELECT * FROM divcanteiro;
