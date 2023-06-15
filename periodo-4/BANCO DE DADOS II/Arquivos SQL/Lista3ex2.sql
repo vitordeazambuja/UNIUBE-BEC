@@ -119,10 +119,10 @@ EXECUTE colhidofunc 1;
 -- EX LETRA F
 GO
 CREATE VIEW divcanteiro AS
-SELECT canteiroId, nome
-FROM (
-    SELECT canteiroId, COUNT(DISTINCT plantaId) AS qtd_plantas
-    FROM plantio
-    GROUP BY canteiroId
-) AS subquery
-WHERE qtd_plantas > 1;
+SELECT c.canteiroId, nome, COUNT(DISTINCT plantaId) AS qtd_plantas
+FROM canteiro c
+INNER JOIN plantio p
+ON p.canteiroId = c.canteiroId
+GROUP BY c.canteiroId, c.nome
+HAVING COUNT(DISTINCT p.plantaId)>1;
+GO
