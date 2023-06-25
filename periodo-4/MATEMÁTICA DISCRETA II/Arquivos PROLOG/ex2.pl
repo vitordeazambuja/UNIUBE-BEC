@@ -1,0 +1,11 @@
+%fatos(aluno,disciplina,nota,frequencia).
+nota_freq(alberto,logica,4.0,60.0).
+nota_freq(juca,logica,7.0,95.0).
+nota_freq(isis,matematica,4.0,75.0).
+nota_freq(maria,logica,9.0,75.0).
+nota_freq(joao,matematica,8.0,75.0).
+homem(alberto).
+homem(juca).
+homem(joao).
+mulher(isis).
+mulher(maria).
