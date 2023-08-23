@@ -25,12 +25,18 @@ public class LeImagem05 implements ActionListener {
     private JFrame principal = null;
 
     public void run() throws IOException {
+
+        // Estilização da janela (Nimbus está relacionado com java.swing)
         checkNimbus();
         principal = new JFrame("Lendo uma imagem PNG");
         principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        String path = "/home/vitor/code/UNIUBE-BEC/periodo-5/PROCESSAMENTO DE IMAGENS/AulasPDI/src/cap01/lena_gray_256.png";
+
+        // Criação do arquivo de imagem e leitura
+        String path = "D:\\Code\\UNIUBE-BEC\\periodo-5\\PROCESSAMENTO DE IMAGENS\\AulasPDI\\src\\cap01\\lena_gray_256.png";
         File file = new File(path);
         imagem = ImageIO.read(file);
+
+        // Montagem da janela com a imagem
         ImageIcon icone = new ImageIcon(imagem);
         JLabel labImagem = new JLabel(icone);
         String infoImagem = "Dimensões: " + imagem.getWidth() + "x" +
@@ -39,10 +45,13 @@ public class LeImagem05 implements ActionListener {
         contentPane.setLayout(new BorderLayout());
         contentPane.add(new JScrollPane(labImagem), BorderLayout.CENTER);
         contentPane.add(new JLabel(infoImagem), BorderLayout.NORTH);
+
+        // Criação dos botões e estilização da janela
         JPanel painel = new JPanel();
         btnAcao = new JButton("Efeito Especial");
         btnAcao.addActionListener(this);
         btnAcao2 = new JButton("Salvar Imagem");
+        btnAcao2.addActionListener(this);
         painel.add(btnAcao);
         painel.add(btnAcao2);
         contentPane.add(painel, BorderLayout.SOUTH);
@@ -63,26 +72,35 @@ public class LeImagem05 implements ActionListener {
             JOptionPane.showMessageDialog(null, "Numbus not available!");
         }
     }
+
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == btnAcao) {
-            int w = imagem.getWidth();
-            int h = imagem.getHeight();
-            int[] pixels = imagem.getRGB(0, 0, w, h, null, 0, w);
-            Random r = new Random();
-            for (int col = 0; col < w; col++) {
-                for (int lin = 0; lin < h; lin++) {
-                    if (lin % 2 == 0)
-                        pixels[w * lin + col] = new Color(r.nextInt(255),
-                                col % 255, lin % 255).getRGB();
+    public void actionPerformed(ActionEvent actionEvent) {
+        if(actionEvent.getSource() == btnAcao) {
+            int width = imagem.getWidth();
+            int height = imagem.getHeight();
+            int[] pixels = imagem.getRGB(0, 0, width, height, null, 0, width);
+
+            //
+            for (int col = 0; col < width; col++) {
+                for (int lin = 0; lin < height; lin++) {
+                    Color color = new Color(pixels[width * lin + col]);
+                    int invertedRed = 255 - color.getRed();
+                    int invertedGreen = 255 - color.getGreen();
+                    int invertedBlue = 255 - color.getBlue();
+                    Color inverted = new Color(invertedRed,invertedGreen,invertedBlue);
+                    pixels[width * lin + col] = inverted.getRGB();
                 }
             }
-            imagem.setRGB(0, 0, w, h, pixels, 0, w);
+
+            //
+            imagem.setRGB(0, 0, width, height, pixels, 0, width);
             principal.repaint();
             System.out.println("OK!");
-        } else if(e.getSource() == btnAcao2) {
+        } else if(actionEvent.getSource() == btnAcao2) {
+            System.out.println("Execução do Botão 2");
         }
     }
+
     public static void main(String[] args) throws IOException {
         new LeImagem05().run();
     }
