@@ -8,14 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.UIManager.LookAndFeelInfo;
 
 public class LeImagem05 implements ActionListener {
@@ -97,7 +90,17 @@ public class LeImagem05 implements ActionListener {
             principal.repaint();
             System.out.println("OK!");
         } else if(actionEvent.getSource() == btnAcao2) {
-            System.out.println("Execução do Botão 2");
+            final JFileChooser fc = new JFileChooser();
+            int returnVal = fc.showSaveDialog(principal);
+            if (returnVal == JFileChooser.APPROVE_OPTION){
+                File file = fc.getSelectedFile();
+                try{
+                    ImageIO.write(imagem, "PNG", file);
+                    JOptionPane.showMessageDialog(principal, "OK!");
+                } catch (IOException el){
+                    JOptionPane.showMessageDialog(principal, "Erro: "+el.getMessage());
+                }
+            }
         }
     }
 
