@@ -26,7 +26,7 @@ public class LeImagem06 implements ActionListener {
         principal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Criação do arquivo de imagem e leitura
-        String path = "/home/vitor/code/UNIUBE-BEC/periodo-5/PROCESSAMENTO DE IMAGENS/AulasPDI/src/cap01/lena_color.png";
+        String path = "D:\\Code\\UNIUBE-BEC\\periodo-5\\PROCESSAMENTO DE IMAGENS\\AulasPDI\\src\\cap01\\lena_color.png";
         File file = new File(path);
         imagem = ImageIO.read(file);
 
