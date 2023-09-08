@@ -63,7 +63,7 @@ public class LeImagem06 implements ActionListener {
                 }
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Numbus not available!");
+            JOptionPane.showMessageDialog(null, "Nimbus not available!");
         }
     }
 
