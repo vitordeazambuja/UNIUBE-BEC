@@ -128,6 +128,43 @@ listaencadeada/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\listaencadeada.dir\build.make CMakeFiles/listaencadeada.dir/build
 .PHONY : listaencadeada/fast
 
+#=============================================================================
+# Target rules for targets named lista_encadeada_com_cabeca
+
+# Build rule for target.
+lista_encadeada_com_cabeca: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 lista_encadeada_com_cabeca
+.PHONY : lista_encadeada_com_cabeca
+
+# fast build rule for target.
+lista_encadeada_com_cabeca/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/build
+.PHONY : lista_encadeada_com_cabeca/fast
+
+lista_encadeada_com_cabeca.obj: lista_encadeada_com_cabeca.c.obj
+.PHONY : lista_encadeada_com_cabeca.obj
+
+# target to build an object file
+lista_encadeada_com_cabeca.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/lista_encadeada_com_cabeca.c.obj
+.PHONY : lista_encadeada_com_cabeca.c.obj
+
+lista_encadeada_com_cabeca.i: lista_encadeada_com_cabeca.c.i
+.PHONY : lista_encadeada_com_cabeca.i
+
+# target to preprocess a source file
+lista_encadeada_com_cabeca.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/lista_encadeada_com_cabeca.c.i
+.PHONY : lista_encadeada_com_cabeca.c.i
+
+lista_encadeada_com_cabeca.s: lista_encadeada_com_cabeca.c.s
+.PHONY : lista_encadeada_com_cabeca.s
+
+# target to generate assembly for a file
+lista_encadeada_com_cabeca.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/lista_encadeada_com_cabeca.c.s
+.PHONY : lista_encadeada_com_cabeca.c.s
+
 listaencadeada.obj: listaencadeada.c.obj
 .PHONY : listaencadeada.obj
 
@@ -160,7 +197,11 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... lista_encadeada_com_cabeca
 	@echo ... listaencadeada
+	@echo ... lista_encadeada_com_cabeca.obj
+	@echo ... lista_encadeada_com_cabeca.i
+	@echo ... lista_encadeada_com_cabeca.s
 	@echo ... listaencadeada.obj
 	@echo ... listaencadeada.i
 	@echo ... listaencadeada.s

@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,12 +31,20 @@
 					"name" : "AulasED1",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
 			"targets" : 
 			[
+				{
+					"directoryIndex" : 0,
+					"id" : "lista_encadeada_com_cabeca::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lista_encadeada_com_cabeca-Debug-0e753268149c3328cad6.json",
+					"name" : "lista_encadeada_com_cabeca",
+					"projectIndex" : 0
+				},
 				{
 					"directoryIndex" : 0,
 					"id" : "listaencadeada::@6890427a1f51a3e7e1df",
@@ -49,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/cmake-build-debug",
-		"source" : "D:/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1"
+		"build" : "C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/cmake-build-debug",
+		"source" : "C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1"
 	},
 	"version" : 
 	{
