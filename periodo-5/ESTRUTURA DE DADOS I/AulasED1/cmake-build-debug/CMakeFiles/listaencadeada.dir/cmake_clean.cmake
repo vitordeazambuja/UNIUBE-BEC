@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/listaencadeada.dir/listaencadeada.c.obj"
-  "CMakeFiles/listaencadeada.dir/listaencadeada.c.obj.d"
+  "CMakeFiles/listaencadeada.dir/Momento1/listaencadeada.c.obj"
+  "CMakeFiles/listaencadeada.dir/Momento1/listaencadeada.c.obj.d"
   "liblistaencadeada.dll.a"
   "listaencadeada.exe"
   "listaencadeada.exe.manifest"

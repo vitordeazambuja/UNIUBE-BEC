@@ -1,4 +1,6 @@
 C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/cmake-build-debug/CMakeFiles/listaencadeada.dir
 C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/cmake-build-debug/CMakeFiles/lista_encadeada_com_cabeca.dir
+C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/cmake-build-debug/CMakeFiles/pilha.dir
+C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/cmake-build-debug/CMakeFiles/pilhaEx2.dir
 C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

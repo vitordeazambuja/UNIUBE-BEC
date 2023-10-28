@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/Momento1/lista_encadeada_com_cabeca.c" "CMakeFiles/lista_encadeada_com_cabeca.dir/Momento1/lista_encadeada_com_cabeca.c.obj" "gcc" "CMakeFiles/lista_encadeada_com_cabeca.dir/Momento1/lista_encadeada_com_cabeca.c.obj.d"
+  "C:/Users/Vitor/Documents/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/Momento2/pilhaEx2.c" "CMakeFiles/pilhaEx2.dir/Momento2/pilhaEx2.c.obj" "gcc" "CMakeFiles/pilhaEx2.dir/Momento2/pilhaEx2.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

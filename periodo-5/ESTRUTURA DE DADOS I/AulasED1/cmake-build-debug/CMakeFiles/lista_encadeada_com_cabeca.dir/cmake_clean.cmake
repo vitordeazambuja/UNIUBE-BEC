@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/lista_encadeada_com_cabeca.dir/lista_encadeada_com_cabeca.c.obj"
-  "CMakeFiles/lista_encadeada_com_cabeca.dir/lista_encadeada_com_cabeca.c.obj.d"
+  "CMakeFiles/lista_encadeada_com_cabeca.dir/Momento1/lista_encadeada_com_cabeca.c.obj"
+  "CMakeFiles/lista_encadeada_com_cabeca.dir/Momento1/lista_encadeada_com_cabeca.c.obj.d"
   "liblista_encadeada_com_cabeca.dll.a"
   "lista_encadeada_com_cabeca.exe"
   "lista_encadeada_com_cabeca.exe.manifest"

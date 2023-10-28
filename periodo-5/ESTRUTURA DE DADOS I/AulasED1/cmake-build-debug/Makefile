@@ -141,53 +141,127 @@ lista_encadeada_com_cabeca/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/build
 .PHONY : lista_encadeada_com_cabeca/fast
 
-lista_encadeada_com_cabeca.obj: lista_encadeada_com_cabeca.c.obj
-.PHONY : lista_encadeada_com_cabeca.obj
+#=============================================================================
+# Target rules for targets named pilha
+
+# Build rule for target.
+pilha: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pilha
+.PHONY : pilha
+
+# fast build rule for target.
+pilha/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilha.dir\build.make CMakeFiles/pilha.dir/build
+.PHONY : pilha/fast
+
+#=============================================================================
+# Target rules for targets named pilhaEx2
+
+# Build rule for target.
+pilhaEx2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 pilhaEx2
+.PHONY : pilhaEx2
+
+# fast build rule for target.
+pilhaEx2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilhaEx2.dir\build.make CMakeFiles/pilhaEx2.dir/build
+.PHONY : pilhaEx2/fast
+
+Momento1/lista_encadeada_com_cabeca.obj: Momento1/lista_encadeada_com_cabeca.c.obj
+.PHONY : Momento1/lista_encadeada_com_cabeca.obj
 
 # target to build an object file
-lista_encadeada_com_cabeca.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/lista_encadeada_com_cabeca.c.obj
-.PHONY : lista_encadeada_com_cabeca.c.obj
+Momento1/lista_encadeada_com_cabeca.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/Momento1/lista_encadeada_com_cabeca.c.obj
+.PHONY : Momento1/lista_encadeada_com_cabeca.c.obj
 
-lista_encadeada_com_cabeca.i: lista_encadeada_com_cabeca.c.i
-.PHONY : lista_encadeada_com_cabeca.i
+Momento1/lista_encadeada_com_cabeca.i: Momento1/lista_encadeada_com_cabeca.c.i
+.PHONY : Momento1/lista_encadeada_com_cabeca.i
 
 # target to preprocess a source file
-lista_encadeada_com_cabeca.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/lista_encadeada_com_cabeca.c.i
-.PHONY : lista_encadeada_com_cabeca.c.i
+Momento1/lista_encadeada_com_cabeca.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/Momento1/lista_encadeada_com_cabeca.c.i
+.PHONY : Momento1/lista_encadeada_com_cabeca.c.i
 
-lista_encadeada_com_cabeca.s: lista_encadeada_com_cabeca.c.s
-.PHONY : lista_encadeada_com_cabeca.s
+Momento1/lista_encadeada_com_cabeca.s: Momento1/lista_encadeada_com_cabeca.c.s
+.PHONY : Momento1/lista_encadeada_com_cabeca.s
 
 # target to generate assembly for a file
-lista_encadeada_com_cabeca.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/lista_encadeada_com_cabeca.c.s
-.PHONY : lista_encadeada_com_cabeca.c.s
+Momento1/lista_encadeada_com_cabeca.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/Momento1/lista_encadeada_com_cabeca.c.s
+.PHONY : Momento1/lista_encadeada_com_cabeca.c.s
 
-listaencadeada.obj: listaencadeada.c.obj
-.PHONY : listaencadeada.obj
+Momento1/listaencadeada.obj: Momento1/listaencadeada.c.obj
+.PHONY : Momento1/listaencadeada.obj
 
 # target to build an object file
-listaencadeada.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\listaencadeada.dir\build.make CMakeFiles/listaencadeada.dir/listaencadeada.c.obj
-.PHONY : listaencadeada.c.obj
+Momento1/listaencadeada.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\listaencadeada.dir\build.make CMakeFiles/listaencadeada.dir/Momento1/listaencadeada.c.obj
+.PHONY : Momento1/listaencadeada.c.obj
 
-listaencadeada.i: listaencadeada.c.i
-.PHONY : listaencadeada.i
+Momento1/listaencadeada.i: Momento1/listaencadeada.c.i
+.PHONY : Momento1/listaencadeada.i
 
 # target to preprocess a source file
-listaencadeada.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\listaencadeada.dir\build.make CMakeFiles/listaencadeada.dir/listaencadeada.c.i
-.PHONY : listaencadeada.c.i
+Momento1/listaencadeada.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\listaencadeada.dir\build.make CMakeFiles/listaencadeada.dir/Momento1/listaencadeada.c.i
+.PHONY : Momento1/listaencadeada.c.i
 
-listaencadeada.s: listaencadeada.c.s
-.PHONY : listaencadeada.s
+Momento1/listaencadeada.s: Momento1/listaencadeada.c.s
+.PHONY : Momento1/listaencadeada.s
 
 # target to generate assembly for a file
-listaencadeada.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\listaencadeada.dir\build.make CMakeFiles/listaencadeada.dir/listaencadeada.c.s
-.PHONY : listaencadeada.c.s
+Momento1/listaencadeada.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\listaencadeada.dir\build.make CMakeFiles/listaencadeada.dir/Momento1/listaencadeada.c.s
+.PHONY : Momento1/listaencadeada.c.s
+
+Momento2/pilhaEx1.obj: Momento2/pilhaEx1.c.obj
+.PHONY : Momento2/pilhaEx1.obj
+
+# target to build an object file
+Momento2/pilhaEx1.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilha.dir\build.make CMakeFiles/pilha.dir/Momento2/pilhaEx1.c.obj
+.PHONY : Momento2/pilhaEx1.c.obj
+
+Momento2/pilhaEx1.i: Momento2/pilhaEx1.c.i
+.PHONY : Momento2/pilhaEx1.i
+
+# target to preprocess a source file
+Momento2/pilhaEx1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilha.dir\build.make CMakeFiles/pilha.dir/Momento2/pilhaEx1.c.i
+.PHONY : Momento2/pilhaEx1.c.i
+
+Momento2/pilhaEx1.s: Momento2/pilhaEx1.c.s
+.PHONY : Momento2/pilhaEx1.s
+
+# target to generate assembly for a file
+Momento2/pilhaEx1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilha.dir\build.make CMakeFiles/pilha.dir/Momento2/pilhaEx1.c.s
+.PHONY : Momento2/pilhaEx1.c.s
+
+Momento2/pilhaEx2.obj: Momento2/pilhaEx2.c.obj
+.PHONY : Momento2/pilhaEx2.obj
+
+# target to build an object file
+Momento2/pilhaEx2.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilhaEx2.dir\build.make CMakeFiles/pilhaEx2.dir/Momento2/pilhaEx2.c.obj
+.PHONY : Momento2/pilhaEx2.c.obj
+
+Momento2/pilhaEx2.i: Momento2/pilhaEx2.c.i
+.PHONY : Momento2/pilhaEx2.i
+
+# target to preprocess a source file
+Momento2/pilhaEx2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilhaEx2.dir\build.make CMakeFiles/pilhaEx2.dir/Momento2/pilhaEx2.c.i
+.PHONY : Momento2/pilhaEx2.c.i
+
+Momento2/pilhaEx2.s: Momento2/pilhaEx2.c.s
+.PHONY : Momento2/pilhaEx2.s
+
+# target to generate assembly for a file
+Momento2/pilhaEx2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilhaEx2.dir\build.make CMakeFiles/pilhaEx2.dir/Momento2/pilhaEx2.c.s
+.PHONY : Momento2/pilhaEx2.c.s
 
 # Help Target
 help:
@@ -199,12 +273,20 @@ help:
 	@echo ... rebuild_cache
 	@echo ... lista_encadeada_com_cabeca
 	@echo ... listaencadeada
-	@echo ... lista_encadeada_com_cabeca.obj
-	@echo ... lista_encadeada_com_cabeca.i
-	@echo ... lista_encadeada_com_cabeca.s
-	@echo ... listaencadeada.obj
-	@echo ... listaencadeada.i
-	@echo ... listaencadeada.s
+	@echo ... pilha
+	@echo ... pilhaEx2
+	@echo ... Momento1/lista_encadeada_com_cabeca.obj
+	@echo ... Momento1/lista_encadeada_com_cabeca.i
+	@echo ... Momento1/lista_encadeada_com_cabeca.s
+	@echo ... Momento1/listaencadeada.obj
+	@echo ... Momento1/listaencadeada.i
+	@echo ... Momento1/listaencadeada.s
+	@echo ... Momento2/pilhaEx1.obj
+	@echo ... Momento2/pilhaEx1.i
+	@echo ... Momento2/pilhaEx1.s
+	@echo ... Momento2/pilhaEx2.obj
+	@echo ... Momento2/pilhaEx2.i
+	@echo ... Momento2/pilhaEx2.s
 .PHONY : help
 
 

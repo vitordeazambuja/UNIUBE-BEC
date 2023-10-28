@@ -16,7 +16,9 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2,
+						3
 					]
 				}
 			],
@@ -32,7 +34,9 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2,
+						3
 					]
 				}
 			],
@@ -41,15 +45,29 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "lista_encadeada_com_cabeca::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lista_encadeada_com_cabeca-Debug-0e753268149c3328cad6.json",
+					"jsonFile" : "target-lista_encadeada_com_cabeca-Debug-1c884b3992de813807b9.json",
 					"name" : "lista_encadeada_com_cabeca",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "listaencadeada::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-listaencadeada-Debug-a1158513dbe960df0106.json",
+					"jsonFile" : "target-listaencadeada-Debug-11374c1317a5743eae2e.json",
 					"name" : "listaencadeada",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pilha::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pilha-Debug-0ccc7edd676bb458104a.json",
+					"name" : "pilha",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "pilhaEx2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pilhaEx2-Debug-a6ac02bb482c951b1b45.json",
+					"name" : "pilhaEx2",
 					"projectIndex" : 0
 				}
 			]

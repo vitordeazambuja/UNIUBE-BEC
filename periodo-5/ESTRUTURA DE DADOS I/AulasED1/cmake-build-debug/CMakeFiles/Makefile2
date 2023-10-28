@@ -64,6 +64,8 @@ CMAKE_BINARY_DIR = "C:\Users\Vitor\Documents\Code\UNIUBE-BEC\periodo-5\ESTRUTURA
 # The main recursive "all" target.
 all: CMakeFiles/listaencadeada.dir/all
 all: CMakeFiles/lista_encadeada_com_cabeca.dir/all
+all: CMakeFiles/pilha.dir/all
+all: CMakeFiles/pilhaEx2.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,6 +75,8 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/listaencadeada.dir/clean
 clean: CMakeFiles/lista_encadeada_com_cabeca.dir/clean
+clean: CMakeFiles/pilha.dir/clean
+clean: CMakeFiles/pilhaEx2.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -126,6 +130,58 @@ lista_encadeada_com_cabeca: CMakeFiles/lista_encadeada_com_cabeca.dir/rule
 CMakeFiles/lista_encadeada_com_cabeca.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\lista_encadeada_com_cabeca.dir\build.make CMakeFiles/lista_encadeada_com_cabeca.dir/clean
 .PHONY : CMakeFiles/lista_encadeada_com_cabeca.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/pilha.dir
+
+# All Build rule for target.
+CMakeFiles/pilha.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilha.dir\build.make CMakeFiles/pilha.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilha.dir\build.make CMakeFiles/pilha.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Vitor\Documents\Code\UNIUBE-BEC\periodo-5\ESTRUTURA DE DADOS I\AulasED1\cmake-build-debug\CMakeFiles" --progress-num=5,6 "Built target pilha"
+.PHONY : CMakeFiles/pilha.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/pilha.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Vitor\Documents\Code\UNIUBE-BEC\periodo-5\ESTRUTURA DE DADOS I\AulasED1\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/pilha.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Vitor\Documents\Code\UNIUBE-BEC\periodo-5\ESTRUTURA DE DADOS I\AulasED1\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/pilha.dir/rule
+
+# Convenience name for target.
+pilha: CMakeFiles/pilha.dir/rule
+.PHONY : pilha
+
+# clean rule for target.
+CMakeFiles/pilha.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilha.dir\build.make CMakeFiles/pilha.dir/clean
+.PHONY : CMakeFiles/pilha.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/pilhaEx2.dir
+
+# All Build rule for target.
+CMakeFiles/pilhaEx2.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilhaEx2.dir\build.make CMakeFiles/pilhaEx2.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilhaEx2.dir\build.make CMakeFiles/pilhaEx2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Vitor\Documents\Code\UNIUBE-BEC\periodo-5\ESTRUTURA DE DADOS I\AulasED1\cmake-build-debug\CMakeFiles" --progress-num=7,8 "Built target pilhaEx2"
+.PHONY : CMakeFiles/pilhaEx2.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/pilhaEx2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Vitor\Documents\Code\UNIUBE-BEC\periodo-5\ESTRUTURA DE DADOS I\AulasED1\cmake-build-debug\CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/pilhaEx2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Vitor\Documents\Code\UNIUBE-BEC\periodo-5\ESTRUTURA DE DADOS I\AulasED1\cmake-build-debug\CMakeFiles" 0
+.PHONY : CMakeFiles/pilhaEx2.dir/rule
+
+# Convenience name for target.
+pilhaEx2: CMakeFiles/pilhaEx2.dir/rule
+.PHONY : pilhaEx2
+
+# clean rule for target.
+CMakeFiles/pilhaEx2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pilhaEx2.dir\build.make CMakeFiles/pilhaEx2.dir/clean
+.PHONY : CMakeFiles/pilhaEx2.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
