@@ -23,7 +23,7 @@ public class Ex4 {
             BufferedImage imagemSaida = new BufferedImage(larguraSaida,alturaSaida,BufferedImage.TYPE_BYTE_GRAY);
 
             // Ampliação bilinear
-            
+
             // Salva imagem de saída
             File output = new File("lena_gray_256_bilinear_ampliado_1_5.png");
             ImageIO.write(imagemSaida,"PNG", output);
