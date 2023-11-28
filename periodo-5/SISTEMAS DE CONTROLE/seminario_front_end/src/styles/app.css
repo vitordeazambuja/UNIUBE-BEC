@@ -1,0 +1,28 @@
+.App{
+    font-family: 'Anybody', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 40px;
+    color: #f9f7f3;
+}
+button{
+    font-family: 'Anybody', sans-serif;
+    font-size: 40px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #f9f7f3;
+    background-color: rgba(0,0,0,0);
+    box-shadow: none;
+    text-shadow: none;
+    border: 2px solid #f9f7f3;
+}
+button:hover{
+    background-color: rgba(249, 247, 243, 0.11);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.counter-title{
+    font-size: 80px;
+}
