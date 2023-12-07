@@ -49,11 +49,11 @@ cmake_ninja_workdir = D$:/Code/UNIUBE-BEC/periodo-5/ESTRUTURA$ DE$ DADOS$ I/Aula
 
 build cmake_object_order_depends_target_listaencadeada: phony || CMakeFiles/listaencadeada.dir
 
-build CMakeFiles/listaencadeada.dir/listaencadeada.c.obj: C_COMPILER__listaencadeada_unscanned_Debug D$:/Code/UNIUBE-BEC/periodo-5/ESTRUTURA$ DE$ DADOS$ I/AulasED1/listaencadeada.c || cmake_object_order_depends_target_listaencadeada
-  DEP_FILE = CMakeFiles\listaencadeada.dir\listaencadeada.c.obj.d
+build CMakeFiles/listaencadeada.dir/Momento1/listaencadeada.c.obj: C_COMPILER__listaencadeada_unscanned_Debug D$:/Code/UNIUBE-BEC/periodo-5/ESTRUTURA$ DE$ DADOS$ I/AulasED1/Momento1/listaencadeada.c || cmake_object_order_depends_target_listaencadeada
+  DEP_FILE = CMakeFiles\listaencadeada.dir\Momento1\listaencadeada.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\listaencadeada.dir
-  OBJECT_FILE_DIR = CMakeFiles\listaencadeada.dir
+  OBJECT_FILE_DIR = CMakeFiles\listaencadeada.dir\Momento1
   TARGET_COMPILE_PDB = CMakeFiles\listaencadeada.dir\
   TARGET_PDB = listaencadeada.pdb
 
@@ -65,7 +65,7 @@ build CMakeFiles/listaencadeada.dir/listaencadeada.c.obj: C_COMPILER__listaencad
 #############################################
 # Link the executable listaencadeada.exe
 
-build listaencadeada.exe: C_EXECUTABLE_LINKER__listaencadeada_Debug CMakeFiles/listaencadeada.dir/listaencadeada.c.obj
+build listaencadeada.exe: C_EXECUTABLE_LINKER__listaencadeada_Debug CMakeFiles/listaencadeada.dir/Momento1/listaencadeada.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\listaencadeada.dir
@@ -75,6 +75,114 @@ build listaencadeada.exe: C_EXECUTABLE_LINKER__listaencadeada_Debug CMakeFiles/l
   TARGET_FILE = listaencadeada.exe
   TARGET_IMPLIB = liblistaencadeada.dll.a
   TARGET_PDB = listaencadeada.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target lista_encadeada_com_cabeca
+
+
+#############################################
+# Order-only phony target for lista_encadeada_com_cabeca
+
+build cmake_object_order_depends_target_lista_encadeada_com_cabeca: phony || CMakeFiles/lista_encadeada_com_cabeca.dir
+
+build CMakeFiles/lista_encadeada_com_cabeca.dir/Momento1/lista_encadeada_com_cabeca.c.obj: C_COMPILER__lista_encadeada_com_cabeca_unscanned_Debug D$:/Code/UNIUBE-BEC/periodo-5/ESTRUTURA$ DE$ DADOS$ I/AulasED1/Momento1/lista_encadeada_com_cabeca.c || cmake_object_order_depends_target_lista_encadeada_com_cabeca
+  DEP_FILE = CMakeFiles\lista_encadeada_com_cabeca.dir\Momento1\lista_encadeada_com_cabeca.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lista_encadeada_com_cabeca.dir
+  OBJECT_FILE_DIR = CMakeFiles\lista_encadeada_com_cabeca.dir\Momento1
+  TARGET_COMPILE_PDB = CMakeFiles\lista_encadeada_com_cabeca.dir\
+  TARGET_PDB = lista_encadeada_com_cabeca.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target lista_encadeada_com_cabeca
+
+
+#############################################
+# Link the executable lista_encadeada_com_cabeca.exe
+
+build lista_encadeada_com_cabeca.exe: C_EXECUTABLE_LINKER__lista_encadeada_com_cabeca_Debug CMakeFiles/lista_encadeada_com_cabeca.dir/Momento1/lista_encadeada_com_cabeca.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\lista_encadeada_com_cabeca.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\lista_encadeada_com_cabeca.dir\
+  TARGET_FILE = lista_encadeada_com_cabeca.exe
+  TARGET_IMPLIB = liblista_encadeada_com_cabeca.dll.a
+  TARGET_PDB = lista_encadeada_com_cabeca.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target pilha
+
+
+#############################################
+# Order-only phony target for pilha
+
+build cmake_object_order_depends_target_pilha: phony || CMakeFiles/pilha.dir
+
+build CMakeFiles/pilha.dir/Momento2/pilhaEx1.c.obj: C_COMPILER__pilha_unscanned_Debug D$:/Code/UNIUBE-BEC/periodo-5/ESTRUTURA$ DE$ DADOS$ I/AulasED1/Momento2/pilhaEx1.c || cmake_object_order_depends_target_pilha
+  DEP_FILE = CMakeFiles\pilha.dir\Momento2\pilhaEx1.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\pilha.dir
+  OBJECT_FILE_DIR = CMakeFiles\pilha.dir\Momento2
+  TARGET_COMPILE_PDB = CMakeFiles\pilha.dir\
+  TARGET_PDB = pilha.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target pilha
+
+
+#############################################
+# Link the executable pilha.exe
+
+build pilha.exe: C_EXECUTABLE_LINKER__pilha_Debug CMakeFiles/pilha.dir/Momento2/pilhaEx1.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\pilha.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\pilha.dir\
+  TARGET_FILE = pilha.exe
+  TARGET_IMPLIB = libpilha.dll.a
+  TARGET_PDB = pilha.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target pilhaEx2
+
+
+#############################################
+# Order-only phony target for pilhaEx2
+
+build cmake_object_order_depends_target_pilhaEx2: phony || CMakeFiles/pilhaEx2.dir
+
+build CMakeFiles/pilhaEx2.dir/Momento2/pilhaEx2.c.obj: C_COMPILER__pilhaEx2_unscanned_Debug D$:/Code/UNIUBE-BEC/periodo-5/ESTRUTURA$ DE$ DADOS$ I/AulasED1/Momento2/pilhaEx2.c || cmake_object_order_depends_target_pilhaEx2
+  DEP_FILE = CMakeFiles\pilhaEx2.dir\Momento2\pilhaEx2.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\pilhaEx2.dir
+  OBJECT_FILE_DIR = CMakeFiles\pilhaEx2.dir\Momento2
+  TARGET_COMPILE_PDB = CMakeFiles\pilhaEx2.dir\
+  TARGET_PDB = pilhaEx2.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target pilhaEx2
+
+
+#############################################
+# Link the executable pilhaEx2.exe
+
+build pilhaEx2.exe: C_EXECUTABLE_LINKER__pilhaEx2_Debug CMakeFiles/pilhaEx2.dir/Momento2/pilhaEx2.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\pilhaEx2.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\pilhaEx2.dir\
+  TARGET_FILE = pilhaEx2.exe
+  TARGET_IMPLIB = libpilhaEx2.dll.a
+  TARGET_PDB = pilhaEx2.pdb
 
 
 #############################################
@@ -102,7 +210,13 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build lista_encadeada_com_cabeca: phony lista_encadeada_com_cabeca.exe
+
 build listaencadeada: phony listaencadeada.exe
+
+build pilha: phony pilha.exe
+
+build pilhaEx2: phony pilhaEx2.exe
 
 # =============================================================================
 # Folder targets.
@@ -112,7 +226,7 @@ build listaencadeada: phony listaencadeada.exe
 #############################################
 # Folder: D:/Code/UNIUBE-BEC/periodo-5/ESTRUTURA DE DADOS I/AulasED1/cmake-build-debug
 
-build all: phony listaencadeada.exe
+build all: phony listaencadeada.exe lista_encadeada_com_cabeca.exe pilha.exe pilhaEx2.exe
 
 # =============================================================================
 # Built-in targets
