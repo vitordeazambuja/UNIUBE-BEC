@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <label for="selectEstado">Selecione um estado:</label>
+    <select id="selectEstado">
+      <option>MG</option>
+      <option>SP</option>
+      <option>RS</option>
+    </select>
+    <br />
+    <label for="selectCidade">Selecione uma cidade:</label>
+    <select id="selectCidade"></select>
+  </body>
+  <script>
+    let selectEstado = document.getElementById("selectEstado");
+    let selectCidade = document.getElementById("selectCidade");
+
+    selectEstado.addEventListener("change", changeValue);
+
+    function changeValue(e) {
+      var estado = e.target.value;
+      if (estado == "MG") {
+        var option1 = document.createElement("option");
+        option1.textContent = "Uberlandia";
+        option1.value = "udi";
+        selectCidade.appendChild(option1);
+      }
+    }
+  </script>
+</html>
