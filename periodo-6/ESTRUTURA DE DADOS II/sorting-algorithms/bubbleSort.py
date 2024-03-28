@@ -3,18 +3,23 @@ import random
 import matplotlib.pyplot as plt
 
 def bubbleSort(v):
+    comparisons = 0
+    movements = 0
     for i in range(len(v) - 1):
-        for j in range(0,len(v)-1-i):
-            if(v[j] > v[j+1]):
+        for j in range(0, len(v) - 1 - i):
+            comparisons += 1
+            if v[j] > v[j + 1]:
                 aux = v[j]
-                v[j] = v[j+1]
-                v[j+1] = aux
+                v[j] = v[j + 1]
+                v[j + 1] = aux
+                movements += 1
+    return comparisons, movements
 
 def measure_execution_time(array):
     start_time = time.time()
-    bubbleSort(array)
+    comparisons, movements = bubbleSort(array)
     end_time = time.time()
-    return end_time - start_time
+    return end_time - start_time, comparisons, movements
 
 def plot_execution_times(sizes, times, title):
     plt.plot(sizes, times, marker='o')
@@ -26,15 +31,32 @@ def plot_execution_times(sizes, times, title):
 
 sizes = [100, 1000, 10000]
 execution_times = {'Crescente': [], 'Decrescente': [], 'Aleatória': []}
+comparisons_data = {'Crescente': [], 'Decrescente': [], 'Aleatória': []}
+movements_data = {'Crescente': [], 'Decrescente': [], 'Aleatória': []}
 
 for size in sizes:
     ascending_array = list(range(size))
     descending_array = list(range(size, 0, -1))
     random_array = random.sample(range(size * 10), size)
 
-    execution_times['Crescente'].append(measure_execution_time(ascending_array))
-    execution_times['Decrescente'].append(measure_execution_time(descending_array))
-    execution_times['Aleatória'].append(measure_execution_time(random_array))
+    time_asc, comp_asc, mov_asc = measure_execution_time(ascending_array)
+    time_desc, comp_desc, mov_desc = measure_execution_time(descending_array)
+    time_rand, comp_rand, mov_rand = measure_execution_time(random_array)
+
+    execution_times['Crescente'].append(time_asc)
+    execution_times['Decrescente'].append(time_desc)
+    execution_times['Aleatória'].append(time_rand)
+
+    comparisons_data['Crescente'].append(comp_asc)
+    comparisons_data['Decrescente'].append(comp_desc)
+    comparisons_data['Aleatória'].append(comp_rand)
+
+    movements_data['Crescente'].append(mov_asc)
+    movements_data['Decrescente'].append(mov_desc)
+    movements_data['Aleatória'].append(mov_rand)
 
 for order, times in execution_times.items():
     plot_execution_times(sizes, times, f'Tempo de execução para array {order}')
+
+print("Comparisons Data:", comparisons_data)
+print("Movements Data:", movements_data)
