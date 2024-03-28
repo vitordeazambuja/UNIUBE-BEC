@@ -2,19 +2,17 @@ import time
 import random
 import matplotlib.pyplot as plt
 
-def selectionSort(v):
-    for i in range(len(v)):
-        menor = i
-        for j in range(i+1, len(v)):
-            if v[j] < v[menor]:
-                menor = j
-        troca = v[i]
-        v[i] = v[menor]
-        v[menor] = troca
+def bubbleSort(v):
+    for i in range(len(v) - 1):
+        for j in range(0,len(v)-1-i):
+            if(v[j] > v[j+1]):
+                aux = v[j]
+                v[j] = v[j+1]
+                v[j+1] = aux
 
 def measure_execution_time(array):
     start_time = time.time()
-    selectionSort(array)
+    bubbleSort(array)
     end_time = time.time()
     return end_time - start_time
 
