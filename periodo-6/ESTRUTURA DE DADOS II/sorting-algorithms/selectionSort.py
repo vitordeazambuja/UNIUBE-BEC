@@ -24,42 +24,32 @@ def measure_execution_time(array):
     end_time = time.time()
     return end_time - start_time, comparisons, movements
 
-def plot_execution_times(sizes, times, title):
-    plt.plot(sizes, times, marker='o')
+def plot_execution_times(sizes, times, title, labels):
+    for i in range(len(times)):
+        plt.plot(sizes, times[i], marker='o', label=labels[i])
     plt.title(title)
     plt.xlabel('Tamanho da Array')
     plt.ylabel('Tempo de Execução (segundos)')
     plt.grid(True)
-    plt.show()
+    plt.legend()
 
 sizes = [100, 1000, 10000]
-execution_times = {'Crescente': [], 'Decrescente': [], 'Aleatória': []}
-comparisons_data = {'Crescente': [], 'Decrescente': [], 'Aleatória': []}
-movements_data = {'Crescente': [], 'Decrescente': [], 'Aleatória': []}
+execution_times = [[], [], []]  # Using a list to hold times for different orders
+labels = ['Crescente', 'Decrescente', 'Aleatória']
 
 for size in sizes:
     ascending_array = list(range(size))
     descending_array = list(range(size, 0, -1))
     random_array = random.sample(range(size * 10), size)
 
-    time_asc, comp_asc, mov_asc = measure_execution_time(ascending_array)
-    time_desc, comp_desc, mov_desc = measure_execution_time(descending_array)
-    time_rand, comp_rand, mov_rand = measure_execution_time(random_array)
+    time_asc, _, _ = measure_execution_time(ascending_array)
+    time_desc, _, _ = measure_execution_time(descending_array)
+    time_rand, _, _ = measure_execution_time(random_array)
 
-    execution_times['Crescente'].append(time_asc)
-    execution_times['Decrescente'].append(time_desc)
-    execution_times['Aleatória'].append(time_rand)
+    execution_times[0].append(time_asc)
+    execution_times[1].append(time_desc)
+    execution_times[2].append(time_rand)
 
-    comparisons_data['Crescente'].append(comp_asc)
-    comparisons_data['Decrescente'].append(comp_desc)
-    comparisons_data['Aleatória'].append(comp_rand)
+plot_execution_times(sizes, execution_times, 'Tempo de execução para diferentes ordens de arrays', labels)
 
-    movements_data['Crescente'].append(mov_asc)
-    movements_data['Decrescente'].append(mov_desc)
-    movements_data['Aleatória'].append(mov_rand)
-
-for order, times in execution_times.items():
-    plot_execution_times(sizes, times, f'Tempo de execução para array {order}')
-
-print("Comparisons Data:", comparisons_data)
-print("Movements Data:", movements_data)
+plt.show()
