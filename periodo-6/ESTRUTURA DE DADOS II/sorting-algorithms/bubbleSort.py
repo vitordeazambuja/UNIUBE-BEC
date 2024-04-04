@@ -31,7 +31,7 @@ def plot_execution_times(sizes, times, title, labels):
     plt.legend()
 
 sizes = [100, 1000, 10000]
-execution_times = [[], [], []]  # Using a list to hold times for different orders
+execution_times = [[], [], []]
 labels = ['Crescente', 'Decrescente', 'Aleatória']
 
 for size in sizes:
