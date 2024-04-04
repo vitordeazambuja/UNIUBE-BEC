@@ -36,10 +36,10 @@ tamanhos = [100, 1000, 10000]
 ordens = [[], [], []]
 legendas = ['Crescente', 'Decrescente', 'Aleatória']
 
-for size in tamanhos:
-    array_cresc = list(range(size))
-    array_decresc = list(range(size, 0, -1))
-    array_random = random.sample(range(size * 10), size)
+for tamanho in tamanhos:
+    array_cresc = list(range(tamanho))
+    array_decresc = list(range(tamanho, 0, -1))
+    array_random = random.sample(range(tamanho * 10), tamanho)
 
     tempo_asc, _, _ = medir_tempo(array_cresc)
     tempo_desc, _, _ = medir_tempo(array_decresc)
