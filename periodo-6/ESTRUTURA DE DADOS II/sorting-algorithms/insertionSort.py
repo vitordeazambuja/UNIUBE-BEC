@@ -23,10 +23,10 @@ def medir_tempo(array):
     tempo_final = time.time()
     return tempo_final - tempo_inicial, comparacoes, movimentos
 
-def plotar_grafico(tamanhos, times, title, legendas):
-    for i in range(len(times)):
-        plt.plot(tamanhos, times[i], marker='o', label=legendas[i])
-    plt.title(title)
+def plotar_grafico(tamanhos, ordens, titulo, legendas):
+    for i in range(len(ordens)):
+        plt.plot(tamanhos, ordens[i], marker='o', label=legendas[i])
+    plt.title(titulo)
     plt.xlabel('Tamanho da Array')
     plt.ylabel('Tempo de Execução (segundos)')
     plt.grid(True)
