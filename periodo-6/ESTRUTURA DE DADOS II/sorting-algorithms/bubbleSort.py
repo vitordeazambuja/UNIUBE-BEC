@@ -30,9 +30,15 @@ def plotar_grafico(tamanhos, ordens, titulo, legendas):
     plt.grid(True)
     plt.legend()
 
+<<<<<<< Updated upstream
 tamanhos = [100, 1000, 10000]
 ordens = [[], [], []]
 legendas = ['Crescente', 'Decrescente', 'Aleatória']
+=======
+sizes = [100, 1000, 10000]
+execution_times = [[], [], []]
+labels = ['Crescente', 'Decrescente', 'Aleatória']
+>>>>>>> Stashed changes
 
 for tamanho in tamanhos:
     array_cresc = list(range(tamanho))
