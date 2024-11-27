@@ -1,0 +1,2 @@
+var cont, 2total: integer ;
+Nota1, Nota2, Media_das_medias, med: real;

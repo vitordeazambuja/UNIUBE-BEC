@@ -1,0 +1,16 @@
+Link para configuração do Bison-Yacc/Flex
+	Link: https://www.youtube.com/watch?v=eJd925f-LkA
+
+	Instalação:
+		Passo 1: Instale o aplicativo "Flex254a1" em C:\, (a configuração está no diretório)
+		Passo 2: Instale o aplicativo "bisonYacc-2.4.1-setup" em C:\.
+		Passo 3: Acesse C:\GnuWin32\lib e copie todos o arquivos desta pasta para C:\MinGW\lib.
+		Passo 4: Adicione a variável PATH (variáves de sistema) os caminhos: C:\GnuWin32\bin e
+			 C:\MinGW\bin.
+
+	Execução:
+		Passo 1: Se na execução do GCC estiver dando erro em m4, copiar o
+			 alicativo m4 (contido em C:\GnuWin32\bin) para o diretório
+			 onde estão os aruivos lex (.l) e yacc (.y).
+		Passo 2: Se estiver aparecendo erro de duplicidade de main, acessar o arquivo
+			 lex.yy.c e retirar o último main do código.

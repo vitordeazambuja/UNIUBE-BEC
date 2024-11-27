@@ -1,0 +1,10 @@
+Program laag;
+{teste}
+var a == integer;
+begin
+read(a,@,1);
+ if (a > 30)
+	a == 9;
+  else
+ 	a == 0; 
+End::
